@@ -2,10 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <meta-data
-        android:name="com.dji.sdk.API_KEY"
-        android:value="xxxxx" />
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Airpano"
-        android:name=".AirpanoApp">
+        android:name=".AirpanoApp"
+        android:extractNativeLibs="true">
+        <uses-library android:name="com.android.future.usb.accessory" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -24,6 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-    </application>
 
+        <meta-data
+            android:name="com.dji.sdk.API_KEY"
+            android:value="xxxxx" />
+    </application>
 </manifest>
